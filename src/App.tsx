@@ -1,9 +1,14 @@
-import React from 'react';
+import { Suspense } from 'react'
+import PublicRoutes from 'routes/PublicRoutes'
+import PrivateRoutes from 'routes/PrivateRoutes'
 
 function App() {
-  return (
-   <h1>Hello</h1>
-  );
+	return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PublicRoutes />
+      <PrivateRoutes />
+    </Suspense>
+  )
 }
 
-export default App;
+export default App
